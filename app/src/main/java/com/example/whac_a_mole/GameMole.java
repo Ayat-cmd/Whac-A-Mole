@@ -38,7 +38,7 @@ public class GameMole extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GameMole.this, MainActivity.class);
-                startActivity(intent);
+                startActivity(intent); finish();
             }
         });
 
@@ -61,7 +61,7 @@ public class GameMole extends AppCompatActivity {
                     String resultMoleHole = delay.textView.getText().toString();
                     Intent intent = new Intent(GameMole.this, MainActivity.class);
                     intent.putExtra(Intent.EXTRA_TEXT, resultMoleHole);
-                    startActivity(intent);
+                    startActivity(intent); finish();
                 }catch (Exception e){}
             }
         }.start();
@@ -274,5 +274,6 @@ public class GameMole extends AppCompatActivity {
     public void onBackPressed() {
         Intent intent = new Intent(GameMole.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }
