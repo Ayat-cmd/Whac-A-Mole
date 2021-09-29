@@ -32,9 +32,9 @@ public class GameMole extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_mole);
 
-        final ImageButton imageButton = (ImageButton) findViewById(R.id.imgBack);
+        final ImageButton imgBackButton = (ImageButton) findViewById(R.id.imgBack);
 
-        imageButton.setOnClickListener(new View.OnClickListener(){
+        imgBackButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GameMole.this, MainActivity.class);
@@ -270,5 +270,9 @@ public class GameMole extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(GameMole.this, MainActivity.class);
+        startActivity(intent);
+    }
 }
